@@ -1,0 +1,17 @@
+Los "vector embeddings" (o incrustaciones vectoriales en español) son representaciones numéricas de datos que capturan su significado o sus características intrínsecas. Imagina que tienes palabras, frases, imágenes, videos, o incluso usuarios en una plataforma. Los ordenadores no pueden entender estos datos directamente de la misma manera que los humanos. Para que los algoritmos de aprendizaje automático puedan procesarlos y analizarlos, necesitamos convertirlos en algo que entiendan: números.
+
+Un vector embedding transforma estos datos en una secuencia de números (un vector) en un espacio multidimensional. La clave aquí es que estos números no son aleatorios; se aprenden a través de algoritmos de manera que los datos que son semánticamente similares (es decir, que tienen significados o características parecidas) están "cerca" unos de otros en este espacio vectorial.
+
+Para entenderlo mejor, piensa en un mapa:
+
+Imagina que quieres representar ciudades en un mapa. Cada ciudad tiene una latitud y una longitud (dos números). Ciudades que están cerca geográficamente en la vida real, también estarán cerca en el mapa.
+
+De manera similar, un vector embedding toma, por ejemplo, una palabra como "rey" y la convierte en un vector de números (ej. [0.1, 0.5, -0.2, 0.8, ...]). La palabra "reina" también se convierte en un vector (ej. [0.05, 0.55, -0.15, 0.75, ...]). Lo interesante es que, debido a cómo se entrenan estos embeddings, los vectores de "rey" y "reina" estarán muy "cerca" en el espacio multidimensional, reflejando su relación semántica. Además, la relación entre "rey" y "reina" podría ser similar a la relación entre "hombre" y "mujer" en este espacio.
+
+Características clave de los Vector Embeddings:
+
+Representación Numérica: Convierten datos complejos (texto, imágenes, etc.) en vectores de números reales.
+Captura de Significado y Relaciones: A diferencia de una simple asignación de ID, los embeddings capturan el contexto, las relaciones semánticas y las características subyacentes de los datos.
+Dimensionalidad Reducida: Aunque pueden ser de varias decenas o cientos de dimensiones, suelen ser una representación mucho más densa y eficiente que otras formas de codificación (como "one-hot encoding" que puede generar vectores enormes y dispersos).
+Similitud Semántica: Los datos que son similares en significado o función tienen vectores que están "cerca" en el espacio vectorial. Esta "cercanía" se mide a menudo usando la similitud del coseno (cosine similarity).
+Aprendizaje Automático: Los embeddings no se crean manualmente; se aprenden a partir de grandes cantidades de datos utilizando algoritmos de aprendizaje automático (como redes neuronales).

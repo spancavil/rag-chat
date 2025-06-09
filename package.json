@@ -1,0 +1,35 @@
+{
+  "name": "rag-chat",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "seed": "ts-node ./src/scripts/loadDB.ts",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^1.2.19",
+    "@ai-sdk/react": "^1.2.12",
+    "@datastax/astra-db-ts": "^1.1.0",
+    "@google/genai": "^1.4.0",
+    "ai": "^4.3.16",
+    "dotenv": "^16.5.0",
+    "langchain": "^0.1.36",
+    "next": "15.3.3",
+    "puppeteer": "^19.11.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "typescript": "^5"
+  }
+}

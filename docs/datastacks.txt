@@ -1,0 +1,1 @@
+Es la DB para almacenar estos vector embeddings.
