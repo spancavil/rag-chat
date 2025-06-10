@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 
-import ProgmammingLogo from './assets/programmingnews.png'
+import f1Logo from './assets/formula1.png'
 import { useChat } from '@ai-sdk/react'
 import PromptSuggestion from './components/PromptSuggestion'
 import LoadingBubble from './components/LoadingBubble'
@@ -17,11 +17,14 @@ const Home = () => {
     status,
     messages,
     error,
-  } = useChat()
-  const loading = status !== 'ready'
+  } = useChat({})
+  const loading = !['ready', 'error'].includes(status)
   const noMessages = !messages || messages.length === 0
 
-  console.log(status)
+  console.info(status)
+  console.info(error)
+  console.info(loading)
+  console.info(messages)
 
   const handlePrompt = (prompt: string) => {
     const msg: Message = {
@@ -34,7 +37,7 @@ const Home = () => {
 
   return (
     <main>
-      <Image src={ProgmammingLogo} width={150} alt='programmingLogo' />
+      <Image src={f1Logo} width={150} alt='f1Logo' />
       <section className={noMessages ? '' : 'populated'}>
         {noMessages ? (
           <>
@@ -51,7 +54,9 @@ const Home = () => {
               <Bubble key={`message-${index}`} message={message}></Bubble>
             ))}
             {loading && <LoadingBubble />}
-            {status === 'error' && <span>Error: {error.message}</span>}
+            {status === 'error' && (
+              <Bubble message={{ error: error.message }} />
+            )}
           </>
         )}
       </section>
@@ -60,7 +65,7 @@ const Home = () => {
           className='question-box'
           onChange={handleInputChange}
           value={input}
-          placeholder='Ask me something'
+          placeholder='Preguntame algo de F1'
         />
         <input type='submit' />
       </form>

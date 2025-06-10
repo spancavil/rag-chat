@@ -20,8 +20,6 @@ const {
 const EMBEDDING_DIMENSION = 1536
 const GOOGLE_RATE_REQUEST_PER_MINUTE = 5
 
-console.log(GEMINI_API_KEY)
-
 const googleGenAI = new GoogleGenAI({ apiKey: GEMINI_API_KEY })
 
 //Puede ser un array de cualquier tipo de datos de interés. Con este array se hará un scraping para obtener las palabras
@@ -29,6 +27,7 @@ const f1Data = [
   'https://es.wikipedia.org/wiki/F%C3%B3rmula_1',
   'https://www.statsf1.com/es/pilotes.aspx',
   'https://www.espn.com.ar/deporte-motor/f1/posiciones',
+  'https://www.sportingnews.com/ar/formula-1/news/cuanto-cobran-pilotos-f1-2022-lista/hjriruckexbaimwb8q8t1kpx',
 ]
 
 const client = new DataAPIClient(ASTRA_DB_APP_TOKEN)
